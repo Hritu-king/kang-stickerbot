@@ -38,10 +38,10 @@ bot = updater.bot
 dispatcher = updater.dispatcher
 
 START_TEXT = """
-*Hey! I'm {}, and I'm a bot which allows you to create a sticker pack from other stickers, images and documents!\n\nOfficial Channel : @Private_Bots*
+*Hey! I'm {}, and I'm a bot which allows you to create a sticker pack from other stickers, images and documents!\n\nSee /help For More\n\nOfficial Channel : @Private_Bots*
 """.format(dispatcher.bot.first_name)
 HELP_TEXT = """
-*Send Me A Sticker Or A Image Then Send `/kang` With Reply To That Sticker Or Image.\n\nI Will Automatically Generate Sticker Pack / Add That Sticker in Your Pack*
+*Send Me A Sticker Or A Image Then Send* `/kang` *With Reply To That Sticker Or Image.\n\nI Will Automatically Generate Sticker Pack / Add That Sticker in Your Pack*
 """
 @run_async
 def start(bot: Bot, update: Update):
