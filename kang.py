@@ -40,12 +40,18 @@ dispatcher = updater.dispatcher
 START_TEXT = """
 *Hey! I'm {}, and I'm a bot which allows you to create a sticker pack from other stickers, images and documents!\n\nOfficial Channel : @Private_Bots*
 """.format(dispatcher.bot.first_name)
-
+HELP_TEXT = """
+*Send Me A Sticker Or A Image Then Send `/kang` With Reply To That Sticker Or Image.\n\nI Will Automatically Generate Sticker Pack / Add That Sticker in Your Pack*
+"""
 @run_async
 def start(bot: Bot, update: Update):
     if update.effective_chat.type == "private":
         update.effective_message.reply_text(START_TEXT, parse_mode=ParseMode.MARKDOWN)
 
+@run_async
+def help(bot: Bot, update: Update):
+    if update.effective_chat.type == "private":
+        update.effective_message.reply_text(HELP_TEXT, parse_mode=ParseMode.MARKDOWN)
 
 @run_async
 def kang(bot: Bot, update: Update, args: List[str]):
@@ -291,10 +297,12 @@ def makepack_internal(msg, user, png_sticker, emoji, bot, packname, packnum):
 kang_handler = CommandHandler('kang', kang, pass_args=True)
 kangurl_handler = CommandHandler('kangurl', kangurl, pass_args=True)
 start_handler = CommandHandler('start', start)
+help_handler = CommandHandler('help', help)
 
 dispatcher.add_handler(kang_handler)
 dispatcher.add_handler(kangurl_handler)
 dispatcher.add_handler(start_handler)
+dispatcher.add_handler(help_handler)
 
 updater.start_polling(timeout=15, read_latency=4)
 updater.idle()
