@@ -38,9 +38,9 @@ bot = updater.bot
 dispatcher = updater.dispatcher
 
 START_TEXT = """
-**Hey! I'm {}, and I'm a bot which allows you to create a sticker pack from other stickers, images and documents!
+Hey! I'm {}, and I'm a bot which allows you to create a sticker pack from other stickers, images and documents!
 
-Official Channel : @Private_Bots**
+Official Channel : @Private_Bots
 """.format(dispatcher.bot.first_name)
 
 @run_async
