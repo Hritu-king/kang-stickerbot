@@ -41,7 +41,7 @@ START_TEXT = """
 *Hey! I'm {}, and I'm a bot which allows you to create a sticker pack from other stickers, images and documents!\n\nSee /help For More\n\nOfficial Channel : @Private_Bots*
 """.format(dispatcher.bot.first_name)
 HELP_TEXT = """
-*Send Me A Sticker Or A Image Then Send* `/kang` *With Reply To That Sticker Or Image.\n\nI Will Automatically Generate Sticker Pack / Add That Sticker in Your Pack*
+*Send Me A Static [ Non-Animated ] Sticker Or A Image Then Send* `/kang` *With Reply To That Sticker Or Image.\n\nI Will Automatically Generate Sticker Pack / Add That Sticker in Your Pack*
 """
 @run_async
 def start(bot: Bot, update: Update):
@@ -117,7 +117,7 @@ def kang(bot: Bot, update: Update, args: List[str]):
             msg.reply_text(f"Sticker successfully added to [pack](t.me/addstickers/{packname})" +
                             f"\nEmoji is: {sticker_emoji}", parse_mode=ParseMode.MARKDOWN)
         except OSError as e:
-            msg.reply_text("I can only kang images m8.")
+            msg.reply_text("I can only kang images Or Static [Non-Animated] Stickers.")
             print(e)
             return
         except TelegramError as e:
