@@ -7,8 +7,8 @@
       "telegram",
       "python"
     ],
-    "repository": "https://github.com/breakdowns",
-    "website": "https://github.com/breakdowns",
+    "repository": "https://github.com/Prime-Venom/kang-stickerbot",
+    "website": "https://github.com/Prime-Venom/kang-stickerbot",
     "success_url": "https://t.me/SlamDevs",
     "stack": "container",
     "env": {
